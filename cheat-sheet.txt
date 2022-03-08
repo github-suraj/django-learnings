@@ -1,0 +1,103 @@
+Documentation : https://docs.djangoproject.com/en/4.0/
+Tutorial: https://docs.djangoproject.com/en/4.0/intro/tutorial01/
+
+- Creating a new project
+django-admin startproject projectname
+
+- Add an app to a project
+python manage.py startapp appname
+
+- Starting the Server
+python manage.py runserver
+
+- Creating migrations
+python manage.py makemigrations
+
+- Migrate the database
+python manage.py migrate
+
+- Creating a super user for the admin panel
+python manage createsuperuser
+
+- Collecting static files into one folder
+python manage.py collectstatic
+
+- Check Available commands from django-admin
+$ django-admin --help
+
+Type 'django-admin help <subcommand>' for help on a specific subcommand.
+
+Available subcommands:
+
+[django]
+    check
+    compilemessages
+    createcachetable
+    dbshell
+    diffsettings
+    dumpdata
+    flush
+    inspectdb
+    loaddata
+    makemessages
+    makemigrations
+    migrate
+    runserver
+    sendtestemail
+    shell
+    showmigrations
+    sqlflush
+    sqlmigrate
+    sqlsequencereset
+    squashmigrations
+    startapp
+    startproject
+    test
+    testserver
+
+- Check Available commands from django project
+$ python manage.py help
+
+Type 'manage.py help <subcommand>' for help on a specific subcommand.
+
+Available subcommands:
+
+[auth]
+    changepassword
+    createsuperuser
+
+[contenttypes]
+    remove_stale_contenttypes
+
+[django]
+    check
+    compilemessages
+    createcachetable
+    dbshell
+    diffsettings
+    dumpdata
+    flush
+    inspectdb
+    loaddata
+    makemessages
+    makemigrations
+    migrate
+    sendtestemail
+    shell
+    showmigrations
+    sqlflush
+    sqlmigrate
+    sqlsequencereset
+    squashmigrations
+    startapp
+    startproject
+    test
+    testserver
+
+[sessions]
+    clearsessions
+
+[staticfiles]
+    collectstatic
+    findstatic
+    runserver
