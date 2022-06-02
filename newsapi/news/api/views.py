@@ -4,8 +4,8 @@ from rest_framework.views import APIView
 from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 
-from news.models import Article
-from news.api.serializers import ArticleSerializer
+from news.models import Article, Journalist
+from news.api.serializers import ArticleSerializer, JournalistSerializer
 
 class ArticleList(APIView):
 
@@ -43,6 +43,21 @@ class ArticleDetail(APIView):
         article = self.get_object(pk)
         article.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+class JournalistList(APIView):
+
+    def get(self, request):
+        journalists = Journalist.objects.all()
+        serializer = JournalistSerializer(journalists, many=True,
+                                            context={'request': request})
+        return Response(serializer.data)
+
+    def post(self, request):
+        serializer = JournalistSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(["GET", "POST"])
 def article_list(request):
